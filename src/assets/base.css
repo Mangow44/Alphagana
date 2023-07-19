@@ -1,5 +1,9 @@
 :root {
   --c-black: #000000;
+  --c-white: #ffffff;
+  --c-green: #54c454;
+  --c-gray: #a5a5a5;
+  --c-red: #ee5a5a;
 }
 
 *,
@@ -11,9 +15,6 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-
   background-color: antiquewhite;
 
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -22,4 +23,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
 }
