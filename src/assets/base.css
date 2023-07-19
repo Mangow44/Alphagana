@@ -1,5 +1,5 @@
 :root {
-  --c-black: #ffffff;
+  --c-black: #000000;
 }
 
 *,
@@ -13,6 +13,8 @@
 body {
   display: flex;
   flex-direction: column;
+
+  background-color: antiquewhite;
 
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
