@@ -4,6 +4,8 @@ import { guesses } from '@/data/guesses'
 import Guess from '@/models/Guess'
 import GameBlock from '@/components/game/GameBlock.vue'
 
+// TODO : faire des options pour ajouter le mode romaji en guess et hiragana en answer
+
 const currentGuess = ref<Guess | null>(null)
 
 generateNewCurrentGuess()

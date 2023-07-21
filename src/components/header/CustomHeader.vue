@@ -15,6 +15,8 @@ header {
 header .title {
   margin: auto;
 
-  font-size: 1.3rem;
+  font-family: Hashiba, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5rem;
 }
 </style>
