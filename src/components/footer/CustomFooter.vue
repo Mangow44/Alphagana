@@ -25,10 +25,10 @@ footer {
 
 .contacts {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
 
   margin-left: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .contacts a {
@@ -39,6 +39,6 @@ footer {
   margin-left: auto;
   margin-right: 1rem;
 
-  font-size: 0.7rem;
+  font-size: 0.5rem;
 }
 </style>
