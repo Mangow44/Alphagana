@@ -20,7 +20,7 @@ watch(props, () => {
 })
 
 function isUserGuessValueValid(): void {
-  if (props.answer === userGuessValue.value) {
+  if (props.answer.toLowerCase() === userGuessValue.value?.toLowerCase()) {
     emit('generateNewGuess')
   } else {
     feedbackError.value = `${props.answer}`

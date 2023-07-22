@@ -35,6 +35,19 @@ describe('Game block', () => {
     expect(wrapper.emitted('generateNewGuess')).toBeTruthy()
   })
 
+  it('User input is correct even if the answer is in uppercase', async () => {
+    // Given
+    const guessInput = wrapper.find(guessInputDataTestId)
+    const validateButton = wrapper.find(validateButtonDataTestId)
+
+    // When
+    guessInput.setValue(answer.toUpperCase())
+    await validateButton.trigger('click')
+
+    // Expect
+    expect(wrapper.emitted('generateNewGuess')).toBeTruthy()
+  })
+
   it('User input is incorrect', async () => {
     // Given
     const guessInput = wrapper.find(guessInputDataTestId)
