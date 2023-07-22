@@ -12,6 +12,10 @@ const guess = ref<string>('')
 const translation = ref<string>('')
 const answer = ref<string>('')
 
+watch(modeStore, () => {
+  generateNewCurrentGuess()
+})
+
 watch(currentGuess, () => {
   const activesModes: Array<Mode> = modeStore.modes.filter((mode) => mode.isActive)
   const modeName: string =
@@ -36,12 +40,6 @@ watch(currentGuess, () => {
   }
 })
 
-watch(modeStore, () => {
-  generateNewCurrentGuess()
-})
-
-generateNewCurrentGuess()
-
 function generateNewCurrentGuess() {
   let newGuess: Guess = guesses[generateRandomNumberBetween(0, guesses.length - 1)]
   while (newGuess === currentGuess.value) {
@@ -53,6 +51,8 @@ function generateNewCurrentGuess() {
 function generateRandomNumberBetween(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
+generateNewCurrentGuess()
 </script>
 
 <template>
