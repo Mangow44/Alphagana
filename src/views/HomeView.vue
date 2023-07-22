@@ -11,10 +11,14 @@ const currentGuess = ref<Guess | null>(null)
 generateNewCurrentGuess()
 
 function generateNewCurrentGuess() {
-  currentGuess.value = guesses[getRandomNumberBetween(0, guesses.length - 1)]
+  let newGuess: Guess = guesses[generateRandomNumberBetween(0, guesses.length - 1)]
+  while (newGuess === currentGuess.value) {
+    newGuess = guesses[generateRandomNumberBetween(0, guesses.length - 1)]
+  }
+  currentGuess.value = newGuess
 }
 
-function getRandomNumberBetween(min: number, max: number): number {
+function generateRandomNumberBetween(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 </script>
