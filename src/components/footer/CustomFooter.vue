@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 
 <template>
   <footer>
@@ -7,7 +11,9 @@
       <a href="mailto:tclouet@ippon.fr">tclouet@ippon.fr</a>
     </div>
 
-    <p class="copyright">Copyright - 2023 - Tous droits réservés.</p>
+    <p class="copyright">
+      {{ t('copyright') }}
+    </p>
   </footer>
 </template>
 
