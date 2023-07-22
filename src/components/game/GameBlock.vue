@@ -81,7 +81,11 @@ function resetUserInput(): void {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 3rem;
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 2.5rem;
+
+  overflow: auto;
 }
 
 .game-container .guess-information h2 {
@@ -137,6 +141,8 @@ function resetUserInput(): void {
 
 .game-container .fb-error {
   visibility: hidden;
+
+  min-height: 2rem;
 }
 
 .game-container .fb-error .answer {
@@ -146,6 +152,7 @@ function resetUserInput(): void {
 .game-container .fb-error.display {
   visibility: visible;
 
+  padding: 0 0.3rem;
   text-align: center;
   color: var(--c-red);
 }

@@ -1,10 +1,26 @@
 import { shallowMount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
-import HomeView from '@/views/HomeView.vue'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 import type Guess from '@/models/Guess'
+import HomeView from '@/views/HomeView.vue'
 
 describe('Home view', () => {
-  const wrapper: any = shallowMount(HomeView)
+  let wrapper: any
+
+  vi.mock('@/stores/modeStore', () => ({
+    useModeStore: vi.fn().mockReturnValue({
+      modes: [
+        { name: 'HiraganaToRomaji', isActive: true, description: 'Hiragana to Romaji' },
+        { name: 'RomajiToHiragana', isActive: false, description: 'Romaji to Hiragana' }
+      ]
+    })
+  }))
+
+  beforeEach(() => {
+    vi.clearAllMocks()
+    setActivePinia(createPinia())
+    wrapper = shallowMount(HomeView)
+  })
 
   it('Generate a random number between min and max', () => {
     // Given
@@ -31,5 +47,18 @@ describe('Home view', () => {
 
     // Then
     expect(newCurrentGuess).not.toEqual(oldCurrentGuess)
+  })
+
+  it('When current guess is update, fill guess, translation and answer : hiragana to romaji', async () => {
+    // Given
+
+    // When
+    wrapper.vm.generateNewCurrentGuess()
+    await wrapper.vm.$nextTick
+
+    // Then
+    expect(wrapper.vm.guess).toEqual(wrapper.vm.currentGuess.hiragana)
+    expect(wrapper.vm.translation).toEqual(wrapper.vm.currentGuess.fr)
+    expect(wrapper.vm.answer).toEqual(wrapper.vm.currentGuess.romaji)
   })
 })
