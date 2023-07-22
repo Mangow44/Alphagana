@@ -1,10 +1,16 @@
 import { shallowMount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
-import HomeView from '@/views/HomeView.vue'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 import type Guess from '@/models/Guess'
+import HomeView from '@/views/HomeView.vue'
 
 describe('Home view', () => {
-  const wrapper: any = shallowMount(HomeView)
+  let wrapper: any
+
+  beforeEach(() => {
+    setActivePinia(createPinia())
+    wrapper = shallowMount(HomeView)
+  })
 
   it('Generate a random number between min and max', () => {
     // Given
