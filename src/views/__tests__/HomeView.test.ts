@@ -16,6 +16,10 @@ describe('Home view', () => {
     })
   }))
 
+  vi.spyOn(global, 'navigator', 'get').mockReturnValue({
+    language: 'fr-FR'
+  } as any)
+
   beforeEach(() => {
     vi.clearAllMocks()
     setActivePinia(createPinia())

@@ -1,0 +1,14 @@
+{
+  "actions": {
+    "validate": "Valider",
+    "next": "Suivant"
+  },
+  "game": {
+    "error": "Mince ! La réponse attendue est :"
+  },
+  "copyright": "Copyright - 2023 - Tous droits réservés.",
+  "mode": {
+    "HiraganaToRomaji": "Hiragana vers Romaji",
+    "RomajiToHiragana": "Romaji vers Hiragana"
+  }
+}

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { guesses } from '@/data/guesses'
 import { useModeStore } from '@/stores/modeStore'
-import type Mode from '@/stores/modeStore'
+import type Mode from '@/models/Mode'
 import Guess from '@/models/Guess'
 import GameBlock from '@/components/game/GameBlock.vue'
 
@@ -11,6 +11,7 @@ const currentGuess = ref<Guess | null>(null)
 const guess = ref<string>('')
 const translation = ref<string>('')
 const answer = ref<string>('')
+const userLanguage = computed<string>(() => navigator.language.split('-')[0])
 
 watch(modeStore, () => {
   generateNewCurrentGuess()
@@ -21,15 +22,15 @@ watch(currentGuess, () => {
   const modeName: string =
     activesModes[generateRandomNumberBetween(0, activesModes.length - 1)]?.name
 
+  translation.value = userLanguage.value === 'fr' ? currentGuess.value!.fr : currentGuess.value!.en
+
   switch (modeName) {
     case 'HiraganaToRomaji':
       guess.value = currentGuess.value!.hiragana
-      translation.value = currentGuess.value!.fr
       answer.value = currentGuess.value!.romaji
       break
     case 'RomajiToHiragana':
       guess.value = currentGuess.value!.romaji
-      translation.value = currentGuess.value!.fr
       answer.value = currentGuess.value!.hiragana
       break
     default:

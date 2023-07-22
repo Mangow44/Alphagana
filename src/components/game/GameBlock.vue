@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { watch, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
   guess: string
@@ -11,6 +12,7 @@ const emit = defineEmits<{
   (e: 'generateNewGuess'): void
 }>()
 
+const { t } = useI18n()
 const userGuessValue = ref<string | null>(null)
 const feedbackError = ref<string | null>(null)
 
@@ -53,13 +55,15 @@ function resetUserInput(): void {
 
     <div class="actions">
       <button class="validate" @click="isUserGuessValueValid()" data-testid="validate-btn">
-        VALIDER
+        {{ t('actions.validate') }}
       </button>
-      <button class="next" @click="emit('generateNewGuess')">SUIVANT</button>
+      <button class="next" @click="emit('generateNewGuess')">
+        {{ t('actions.next') }}
+      </button>
     </div>
 
     <p class="fb-error" :class="{ display: feedbackError }" data-testid="fb-error">
-      Mince ! La réponse attendue est :
+      {{ t('game.error') }}
       <span class="answer">{{ feedbackError }}</span>
     </p>
   </div>
@@ -127,6 +131,7 @@ function resetUserInput(): void {
   border-radius: 10px;
   border: none;
 
+  text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: bold;
 }
