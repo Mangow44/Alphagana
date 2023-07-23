@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { guesses } from '@/data/guesses'
 import { useModeStore } from '@/stores/modeStore'
 import type Mode from '@/models/Mode'
-import Guess from '@/models/Guess'
+import type Guess from '@/models/Guess'
 import GameBlock from '@/components/game/GameBlock.vue'
 
 const modeStore = useModeStore()

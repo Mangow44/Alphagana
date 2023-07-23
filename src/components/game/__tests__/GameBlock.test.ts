@@ -1,9 +1,20 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
+import { createI18n } from 'vue-i18n'
 import GameBlock from '@/components/game/GameBlock.vue'
-import { createI18n } from 'vue-i18n/dist/vue-i18n.js'
+
+import fr from '@/lang/fr.json'
+import en from '@/lang/en.json'
 
 describe('Game block', () => {
+  const messages = { fr, en }
+  const mockI18n = createI18n({
+    legacy: false,
+    locale: 'fr',
+    fallbackLocale: 'en',
+    messages
+  })
+
   const guess: string = 'さようなら'
   const translation: string = 'au revoir'
   const answer: string = 'sayounara'
@@ -13,7 +24,9 @@ describe('Game block', () => {
       translation,
       answer
     },
-    global: { plugins: [createI18n] }
+    global: {
+      plugins: [mockI18n]
+    }
   })
 
   const guessInputDataTestId: string = "[data-testid='guess-input']"
