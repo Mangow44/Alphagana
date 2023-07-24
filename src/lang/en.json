@@ -1,0 +1,15 @@
+{
+  "actions": {
+    "validate": "Validate",
+    "next": "Next"
+  },
+
+  "game": {
+    "error": "Oops ! Expected answer is :"
+  },
+  "copyright": "Copyright - 2023 - All rights reserved.",
+  "mode": {
+    "HiraganaToRomaji": "Hiragana to Romaji",
+    "RomajiToHiragana": "Romaji to Hiragana"
+  }
+}
