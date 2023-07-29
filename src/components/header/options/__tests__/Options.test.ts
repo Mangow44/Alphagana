@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { createPinia, setActivePinia } from 'pinia'
 import { shallowMount } from '@vue/test-utils'
-import Options from '@/components/header/option/Options.vue'
+import Options from '@/components/header/options/Options.vue'
 
 describe('Options pane', () => {
   vi.mock('@/stores/modeStore', () => ({

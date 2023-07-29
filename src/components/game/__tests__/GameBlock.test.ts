@@ -31,6 +31,7 @@ describe('Game block', () => {
 
   const guessInputDataTestId: string = "[data-testid='guess-input']"
   const validateButtonDataTestId: string = "[data-testid='validate-btn']"
+  const nextButtonDataTestId: string = "[data-testid='next-btn']"
   const feedbackErrorDataTestId: string = "[data-testid='fb-error']"
 
   beforeEach(() => {
@@ -101,5 +102,16 @@ describe('Game block', () => {
     // Then
     expect(wrapper.vm.feedbackError).toBeNull()
     expect(wrapper.vm.userGuessValue).toBeNull()
+  })
+
+  it('Request a new guess when next button is pressed', async () => {
+    // Given
+    const nextButton = wrapper.find(nextButtonDataTestId)
+
+    // When
+    await nextButton.trigger('click')
+
+    // Then
+    expect(wrapper.emitted('generateNewGuess')).toBeTruthy()
   })
 })

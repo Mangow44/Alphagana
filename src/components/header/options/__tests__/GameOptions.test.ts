@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it } from 'vitest'
-import GameOptions from '@/components/header/option/GameOptions.vue'
+import GameOptions from '@/components/header/options/GameOptions.vue'
 
 describe('Game options', () => {
   let wrapper: any

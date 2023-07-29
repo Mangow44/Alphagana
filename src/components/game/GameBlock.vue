@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import CustomButton from '@/components/assets/CustomButton.vue'
 
 const props = defineProps<{
   guess: string
@@ -48,18 +49,25 @@ function resetUserInput(): void {
     <input
       class="guess"
       type="text"
+      placeholder="..."
       v-model="userGuessValue"
       @keyup.enter="isUserGuessValueValid()"
       data-testid="guess-input"
     />
 
     <div class="actions">
-      <button class="validate" @click="isUserGuessValueValid()" data-testid="validate-btn">
-        {{ t('actions.validate') }}
-      </button>
-      <button class="next" @click="emit('generateNewGuess')">
-        {{ t('actions.next') }}
-      </button>
+      <custom-button
+        :content="t('actions.validate')"
+        @click="isUserGuessValueValid()"
+        class="validate"
+        data-testid="validate-btn"
+      />
+      <custom-button
+        :content="t('actions.next')"
+        @click="emit('generateNewGuess')"
+        class="next"
+        data-testid="next-btn"
+      />
     </div>
 
     <p class="fb-error" :class="{ display: feedbackError }" data-testid="fb-error">
@@ -87,7 +95,7 @@ function resetUserInput(): void {
 
   width: 100%;
   height: 7rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 
   overflow: auto;
 }
@@ -105,13 +113,14 @@ function resetUserInput(): void {
 .game-container .guess {
   width: 19rem;
   height: 2rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
   margin: auto;
 
-  font-size: 1.4rem;
+  font-size: 0.9rem;
 
-  border: none;
-  border-radius: 10px;
+  outline: none;
+  border: solid 2px var(--c-black);
+  box-shadow: var(--c-black) 4px 4px;
 }
 
 .game-container .actions {
@@ -119,21 +128,6 @@ function resetUserInput(): void {
   justify-content: space-around;
 
   margin: 2rem 0;
-}
-
-.game-container .actions button {
-  width: 5rem;
-  height: 2rem;
-  padding: 0.3rem;
-
-  cursor: pointer;
-
-  border-radius: 10px;
-  border: none;
-
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
 .game-container .actions .validate {
