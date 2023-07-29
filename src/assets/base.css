@@ -2,8 +2,8 @@
   --c-black: #000000;
   --c-light-black: #131313;
   --c-white: #ffffff;
-  --c-green: #54c454;
-  --c-gray: #a5a5a5;
+  --c-green: #b6f68f;
+  --c-gray: #dbdbdb;
   --c-red: #ee5a5a;
 }
 
@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: var(--c-white);
 
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

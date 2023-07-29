@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import Icon from './Icon.vue'
+import Icon from '@/components/assets/Icon.vue'
 
 const props = defineProps<{
   trigger: boolean

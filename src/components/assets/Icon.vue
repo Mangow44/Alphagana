@@ -20,8 +20,8 @@ defineProps<{
 
   cursor: pointer;
 
-  border: solid 2px var(--c-black);
   background-color: var(--c-white);
+  border: solid 2px var(--c-black);
   box-shadow: var(--c-black) 4px 4px;
 }
 
