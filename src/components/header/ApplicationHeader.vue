@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GameOptions from '@/components/header/option/GameOptions.vue'
+import GameOptions from '@/components/header/options/GameOptions.vue'
 </script>
 
 <template>
