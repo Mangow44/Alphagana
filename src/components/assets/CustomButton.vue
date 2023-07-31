@@ -18,11 +18,18 @@ button {
 
   cursor: pointer;
 
+  transition: 0.25s ease-in-out;
+
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: bold;
 
   border: solid 2px var(--c-black);
   box-shadow: var(--c-black) 4px 4px;
+}
+
+button:hover {
+  transform: translate3d(4px, 4px, 0);
+  box-shadow: none;
 }
 </style>

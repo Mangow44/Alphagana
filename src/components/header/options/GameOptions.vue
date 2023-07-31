@@ -11,9 +11,9 @@ const isOptionsPaneDisplayed = ref<boolean>(false)
 
 <template>
   <icon
-    @click="isOptionsPaneDisplayed = !isOptionsPaneDisplayed"
     :src="'/icons/gear.svg'"
     :alt="'Options'"
+    @click="isOptionsPaneDisplayed = !isOptionsPaneDisplayed"
     class="btn-options"
     data-testid="btn-options"
   />

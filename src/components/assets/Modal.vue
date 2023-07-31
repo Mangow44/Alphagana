@@ -17,10 +17,10 @@ const emit = defineEmits<{
     <div class="header">
       <p>{{ header }}</p>
       <icon
-        @click="emit('closeModal')"
-        class="close-icon"
         :src="'/icons/x.svg'"
         :alt="'Close modal'"
+        @click="emit('closeModal')"
+        class="close-icon"
         data-testid="btn-close"
       />
     </div>

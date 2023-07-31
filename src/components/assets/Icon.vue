@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <button class="icon-btn">
-    <img class="icon-img" :src="src" :alt="alt" />
+    <img :src="src" :alt="alt" class="icon-img" />
   </button>
 </template>
 
@@ -20,9 +20,16 @@ defineProps<{
 
   cursor: pointer;
 
+  transition: 0.25s ease-in-out;
+
   background-color: var(--c-white);
   border: solid 2px var(--c-black);
   box-shadow: var(--c-black) 4px 4px;
+}
+
+.icon-btn:hover {
+  transform: translate3d(4px, 4px, 0);
+  box-shadow: none;
 }
 
 .icon-img {

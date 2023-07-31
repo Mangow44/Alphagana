@@ -129,10 +129,12 @@ function resetUserInput(): void {
 
   margin: 2rem 0;
 }
+
 .actions .validate,
 .actions .next {
   width: 5rem;
 }
+
 .actions .validate {
   background-color: var(--c-green);
 }
