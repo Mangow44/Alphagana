@@ -11,9 +11,12 @@ const { t } = useI18n()
       <a href="mailto:tclouet@ippon.fr">tclouet@ippon.fr</a>
     </div>
 
-    <p class="copyright">
-      {{ t('copyright') }}
-    </p>
+    <div class="app-information">
+      <p>1.0.0</p>
+      <p class="copyright">
+        {{ t('copyright') }}
+      </p>
+    </div>
   </footer>
 </template>
 
@@ -33,6 +36,8 @@ footer {
   display: flex;
   flex-direction: column;
 
+  margin-right: auto;
+
   margin-left: 1rem;
   font-size: 0.7rem;
 }
@@ -41,10 +46,12 @@ footer {
   color: var(--c-white);
 }
 
-.copyright {
-  margin-left: auto;
+.app-information {
+  display: flex;
+  flex-direction: column;
+
   margin-right: 1rem;
 
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 </style>
