@@ -3,7 +3,6 @@
     "validate": "Validate",
     "next": "Next"
   },
-
   "game": {
     "error": "Oops ! Expected answer is :"
   },
@@ -11,5 +10,6 @@
   "mode": {
     "HiraganaToRomaji": "Hiragana to Romaji",
     "RomajiToHiragana": "Romaji to Hiragana"
-  }
+  },
+  "options": "Options"
 }

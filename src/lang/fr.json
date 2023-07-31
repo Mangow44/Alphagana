@@ -10,5 +10,6 @@
   "mode": {
     "HiraganaToRomaji": "Hiragana vers Romaji",
     "RomajiToHiragana": "Romaji vers Hiragana"
-  }
+  },
+  "options": "Options"
 }

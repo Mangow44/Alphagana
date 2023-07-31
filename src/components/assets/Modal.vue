@@ -1,31 +1,30 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import Icon from '@/components/assets/Icon.vue'
 
-const props = defineProps<{
-  trigger: boolean
+defineProps<{
+  header: string
 }>()
 
-const isModalDisplayed = ref<boolean>(false)
-
-watch(props, () => (isModalDisplayed.value = true))
+const emit = defineEmits<{
+  (e: 'closeModal'): void
+}>()
 </script>
 
 <template>
-  <div
-    v-if="isModalDisplayed"
-    @click="isModalDisplayed = false"
-    class="blur"
-    data-testid="blur"
-  ></div>
+  <div @click="emit('closeModal')" class="blur" data-testid="blur"></div>
 
-  <div v-if="isModalDisplayed" class="modal">
-    <icon
-      @click="isModalDisplayed = false"
-      class="close-icon"
-      :src="'/icons/x.svg'"
-      :alt="'Close modal'"
-    />
+  <div class="modal">
+    <div class="header">
+      <p>{{ header }}</p>
+      <icon
+        :src="'/icons/x.svg'"
+        :alt="'Close modal'"
+        @click="emit('closeModal')"
+        class="close-icon"
+        data-testid="btn-close"
+      />
+    </div>
+
     <div class="content">
       <slot></slot>
     </div>
@@ -48,30 +47,46 @@ watch(props, () => (isModalDisplayed.value = true))
 
 .modal {
   position: absolute;
-  top: calc(50% - (15rem / 2));
-  left: calc(50% - (18rem / 2));
+  top: calc(50%);
+  left: calc(50%);
 
   display: flex;
   flex-direction: column;
 
-  width: 18rem;
-  height: 15rem;
+  width: fit-content;
+  height: fit-content;
 
   background-color: var(--c-white);
   border: solid 2px var(--c-black);
   box-shadow: var(--c-black) 4px 4px;
+  transform: translate3d(-50%, -50%, 0);
 }
 
-.modal .close-icon {
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.2rem;
+}
+
+.header p {
+  margin: 0 0.3rem;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.close-icon {
   height: 1.5rem;
   width: 1.5rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
 
-.modal .content {
+.content {
   width: 100%;
   height: 100%;
+
+  padding: 0.2rem;
 
   overflow: auto;
 }
