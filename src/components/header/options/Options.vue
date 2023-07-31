@@ -31,7 +31,7 @@ const modeStore = useModeStore()
   font-size: 0.7rem;
 }
 
-.option .choice {
+.choice {
   margin-top: 0.1rem;
   margin-bottom: auto;
 }

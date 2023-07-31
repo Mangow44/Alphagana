@@ -12,7 +12,7 @@ const props = defineProps<{
 
 <style scoped>
 button {
-  width: 5rem;
+  width: fit-content;
   height: 2.5rem;
   padding: 0.3rem;
 

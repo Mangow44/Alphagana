@@ -16,7 +16,8 @@ header {
 
   padding: 0.4rem 0;
 }
-header .title {
+
+.title {
   position: relative;
 
   margin: auto 0;
@@ -32,7 +33,7 @@ header .title {
   font-size: 2.4rem;
 }
 
-header .title::before {
+.title::before {
   z-index: -1;
   position: absolute;
 

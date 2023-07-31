@@ -25,7 +25,7 @@ defineProps<{
   box-shadow: var(--c-black) 4px 4px;
 }
 
-.icon-btn .icon-img {
+.icon-img {
   width: 100%;
   height: 100%;
 }

@@ -47,11 +47,11 @@ function resetUserInput(): void {
     </div>
 
     <input
+      v-model="userGuessValue"
+      @keyup.enter="isUserGuessValueValid()"
       class="guess"
       type="text"
       placeholder="..."
-      v-model="userGuessValue"
-      @keyup.enter="isUserGuessValueValid()"
       data-testid="guess-input"
     />
 
@@ -87,7 +87,7 @@ function resetUserInput(): void {
   margin: auto;
 }
 
-.game-container .guess-information {
+.guess-information {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,17 +100,17 @@ function resetUserInput(): void {
   overflow: auto;
 }
 
-.game-container .guess-information h2 {
+.guess-information h2 {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.game-container .guess-information h3 {
+.guess-information h3 {
   font-size: 1rem;
   font-style: italic;
 }
 
-.game-container .guess {
+.guess {
   width: 19rem;
   height: 2rem;
   padding: 0.5rem;
@@ -123,32 +123,35 @@ function resetUserInput(): void {
   box-shadow: var(--c-black) 4px 4px;
 }
 
-.game-container .actions {
+.actions {
   display: flex;
   justify-content: space-around;
 
   margin: 2rem 0;
 }
-
-.game-container .actions .validate {
+.actions .validate,
+.actions .next {
+  width: 5rem;
+}
+.actions .validate {
   background-color: var(--c-green);
 }
 
-.game-container .actions .next {
+.actions .next {
   background-color: var(--c-gray);
 }
 
-.game-container .fb-error {
+.fb-error {
   visibility: hidden;
 
   min-height: 2rem;
 }
 
-.game-container .fb-error .answer {
+.fb-error .answer {
   font-weight: bold;
 }
 
-.game-container .fb-error.display {
+.fb-error.display {
   visibility: visible;
 
   padding: 0 0.3rem;

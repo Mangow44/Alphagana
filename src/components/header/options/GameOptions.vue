@@ -1,22 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Icon from '@/components/assets/Icon.vue'
 import Modal from '@/components/assets/Modal.vue'
 import Options from '@/components/header/options/Options.vue'
 
+const { t } = useI18n()
 const isOptionsPaneDisplayed = ref<boolean>(false)
 </script>
 
 <template>
   <icon
     @click="isOptionsPaneDisplayed = !isOptionsPaneDisplayed"
-    class="btn-options"
     :src="'/icons/gear.svg'"
     :alt="'Options'"
+    class="btn-options"
     data-testid="btn-options"
   />
 
-  <modal :trigger="isOptionsPaneDisplayed">
+  <modal
+    v-if="isOptionsPaneDisplayed"
+    :header="t('options')"
+    @close-modal="isOptionsPaneDisplayed = false"
+    data-testid="modal-options"
+  >
     <options />
   </modal>
 </template>

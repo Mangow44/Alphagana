@@ -2,9 +2,9 @@ import { shallowMount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { createPinia, setActivePinia } from 'pinia'
 import type Guess from '@/models/Guess'
-import HomeView from '@/views/HomeView.vue'
+import GameView from '@/views/GameView.vue'
 
-describe('Home view', () => {
+describe('Game view', () => {
   let wrapper: any
 
   vi.mock('@/stores/modeStore', () => ({
@@ -23,7 +23,7 @@ describe('Home view', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     setActivePinia(createPinia())
-    wrapper = shallowMount(HomeView)
+    wrapper = shallowMount(GameView)
   })
 
   it('Generate a random number between min and max', () => {
