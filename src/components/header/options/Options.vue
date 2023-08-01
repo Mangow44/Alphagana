@@ -35,7 +35,7 @@ const modeStore = useModeStore()
 
 .choice {
   margin-top: 0.1rem;
-
+  
   font-size: 0.7rem;
 }
 </style>
