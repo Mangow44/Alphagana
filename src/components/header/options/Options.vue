@@ -25,14 +25,16 @@ const modeStore = useModeStore()
   display: flex;
   gap: 1rem;
 
+  min-width: 15rem;
+  min-height: 2rem;
   margin: 0.5rem 0;
   padding: 0.3rem;
 
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .choice {
-  margin-top: 0.1rem;
+  margin-top: 0.35em;
   margin-bottom: auto;
 }
 </style>
