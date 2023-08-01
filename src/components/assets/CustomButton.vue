@@ -18,7 +18,7 @@ button {
 
   cursor: pointer;
 
-  transition: 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out;
 
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -29,6 +29,10 @@ button {
 }
 
 button:hover {
+    filter: brightness(0.7);
+}
+
+button:active {
   transform: translate3d(4px, 4px, 0);
   box-shadow: none;
 }

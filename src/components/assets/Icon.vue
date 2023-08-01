@@ -20,7 +20,7 @@ defineProps<{
 
   cursor: pointer;
 
-  transition: 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out;
 
   background-color: var(--c-white);
   border: solid 2px var(--c-black);
@@ -28,6 +28,10 @@ defineProps<{
 }
 
 .icon-btn:hover {
+    filter: brightness(0.7);
+}
+
+.icon-btn:active {
   transform: translate3d(4px, 4px, 0);
   box-shadow: none;
 }
