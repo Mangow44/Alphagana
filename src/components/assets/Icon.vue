@@ -13,6 +13,8 @@ defineProps<{
 
 <style scoped>
 .icon-btn {
+  flex-shrink: 0;
+
   width: 2.5rem;
   height: 2.5rem;
   margin: auto;
@@ -28,7 +30,7 @@ defineProps<{
 }
 
 .icon-btn:hover {
-    filter: brightness(0.7);
+  filter: brightness(0.7);
 }
 
 .icon-btn:active {

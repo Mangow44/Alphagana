@@ -12,7 +12,7 @@ const { t } = useI18n()
     </div>
 
     <div class="app-information">
-      <p>1.1.0</p>
+      <p>1.1.1</p>
       <p class="copyright">
         {{ t('copyright') }}
       </p>
@@ -24,6 +24,8 @@ const { t } = useI18n()
 footer {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 
   width: 100%;
   height: 3rem;
@@ -35,6 +37,7 @@ footer {
 .contacts {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 
   margin-right: auto;
 
@@ -49,6 +52,7 @@ footer {
 .app-information {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 
   margin-right: 1rem;
 
