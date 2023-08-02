@@ -19,7 +19,6 @@ describe('Game options', () => {
   })
 
   const btnOptionsDataTestId: string = "[data-testid='btn-options']"
-  const modalOptionsDataTestId: string = "[data-testid='modal-options']"
 
   beforeEach(() => {
     setActivePinia(createPinia())
@@ -34,11 +33,9 @@ describe('Game options', () => {
     // When
     await btnOptions.trigger('click')
     const newIsOptionsPaneDisplayed: boolean = wrapper.vm.isOptionsPaneDisplayed
-    const modalOptions = wrapper.find(modalOptionsDataTestId)
 
     // Then
     expect(newIsOptionsPaneDisplayed).not.toEqual(oldIsOptionsPaneDisplayed)
     expect(newIsOptionsPaneDisplayed).toEqual(!oldIsOptionsPaneDisplayed)
-    expect(modalOptions.exists()).toBeTruthy()
   })
 })

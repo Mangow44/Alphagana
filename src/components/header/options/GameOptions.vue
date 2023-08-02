@@ -22,7 +22,6 @@ const isOptionsPaneDisplayed = ref<boolean>(false)
     v-if="isOptionsPaneDisplayed"
     :header="t('options')"
     @close-modal="isOptionsPaneDisplayed = false"
-    data-testid="modal-options"
   >
     <options />
   </modal>
