@@ -12,7 +12,7 @@ const { t } = useI18n()
     </div>
 
     <div class="app-information">
-      <p>1.1.1</p>
+      <p>1.1.2</p>
       <p class="copyright">
         {{ t('copyright') }}
       </p>
