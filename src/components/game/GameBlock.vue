@@ -102,8 +102,10 @@ function resetUserInput(): void {
 
 .guess-information h2 {
   width: 95%;
+  height: 4rem;
 
-  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
 
   text-align: center;
   white-space: nowrap;
