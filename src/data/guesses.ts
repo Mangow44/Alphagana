@@ -42,7 +42,7 @@ export const guesses: Array<Guess> = [
   { hiragana: 'あき', romaji: 'aki', fr: 'automne', en: 'autumn' },
   { hiragana: 'ふゆ', romaji: 'fuyu', fr: 'hiver', en: 'winter' },
 
-  // vétements
+  // vêtements
   { hiragana: 'どれす', romaji: 'doresu', fr: 'robe', en: 'dress' },
   { hiragana: 'くつ', romaji: 'kutsu', fr: 'chaussure', en: 'shoe' },
 
