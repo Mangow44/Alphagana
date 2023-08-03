@@ -19,25 +19,17 @@ watch(modeStore, () => {
 
 watch(currentGuess, () => {
   const activesModes: Array<Mode> = modeStore.modes.filter((mode) => mode.isActive)
-  const modeName: string =
-    activesModes[generateRandomNumberBetween(0, activesModes.length - 1)]?.name
+  const currentMode: Mode = activesModes[generateRandomNumberBetween(0, activesModes.length - 1)]
 
-  translation.value = userLanguage.value === 'fr' ? currentGuess.value!.fr : currentGuess.value!.en
-
-  switch (modeName) {
-    case 'HiraganaToRomaji':
-      guess.value = currentGuess.value!.hiragana
-      answer.value = currentGuess.value!.romaji
-      break
-    case 'RomajiToHiragana':
-      guess.value = currentGuess.value!.romaji
-      answer.value = currentGuess.value!.hiragana
-      break
-    default:
-      guess.value = ''
-      translation.value = ''
-      answer.value = ''
-      break
+  if (currentMode) {
+    translation.value =
+      userLanguage.value === 'fr' ? currentGuess.value!.fr : currentGuess.value!.en
+    guess.value = currentGuess.value![currentMode.keys.from]
+    answer.value = currentGuess.value![currentMode.keys.to]
+  } else {
+    translation.value = ''
+    guess.value = ''
+    answer.value = ''
   }
 })
 
