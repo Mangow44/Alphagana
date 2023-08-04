@@ -1,9 +1,6 @@
 import type Guess from '@/models/Guess'
 
 export const guesses: Array<Guess> = [
-  { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
-  { hiragana: 'いいえ', romaji: 'iie', fr: 'non', en: 'no' },
-
   // nature
   { hiragana: 'いぬ', romaji: 'inu', fr: 'chien', en: 'dog' },
   { hiragana: 'ねこ', romaji: 'neko', fr: 'chat', en: 'cat' },
@@ -63,16 +60,28 @@ export const guesses: Array<Guess> = [
     fr: 'poisson ou légume frit et pané',
     en: 'fried and breaded fish or vegetable'
   },
-
-  { hiragana: 'ちょっと', romaji: 'chotto', fr: 'un petit peu', en: 'a little' },
+  {
+    hiragana: 'いただきます',
+    romaji: 'itadakimasu',
+    fr: 'bon appétit',
+    en: 'enjoy your meal'
+  },
+  {
+    hiragana: 'おいしい',
+    romaji: 'oiishi',
+    fr: 'délicieux, savoureux',
+    en: 'delicious, tasty'
+  },
 
   // Salutations
   { hiragana: 'はじめまして', romaji: 'hajimemashite', fr: 'enchanté', en: 'nice to meet you' },
-  { hiragana: 'おはよう', romaji: 'ohayou', fr: 'bonne matinée', en: 'good morning' },
+  { hiragana: 'おはよう', romaji: 'ohayou', fr: 'bonjour (matin)', en: 'good morning' },
   { hiragana: 'こんにちわ', romaji: 'konnichiwa', fr: 'bonjour', en: 'hello' },
   { hiragana: 'こんばんわ', romaji: 'konbanwa', fr: 'bonsoir', en: 'good evening' },
   { hiragana: 'ありがとう', romaji: 'arigatou', fr: 'merci', en: 'thank you' },
-  { hiragana: 'さようなら', romaji: 'sayounara', fr: 'au revoir, adieu', en: 'farewell' },
+  { hiragana: 'じゃあまた', romaji: 'jaa mata', fr: 'à plus tard', en: 'see you soon' },
+  { hiragana: 'しつれいします', romaji: 'shitsurei shimasu', fr: 'au revoir', en: 'goodbye' },
+  { hiragana: 'さようなら', romaji: 'sayounara', fr: 'au revoir (adieu)', en: 'farewell' },
 
   { hiragana: 'どこ', romaji: 'doko', fr: 'où', en: 'where' },
   { hiragana: 'どう', romaji: 'dou', fr: 'comment', en: 'how' },
@@ -81,6 +90,15 @@ export const guesses: Array<Guess> = [
   { hiragana: 'こうこうせい', romaji: 'koukousei', fr: 'lycéen', en: 'high school student' },
   { hiragana: 'がくせい', romaji: 'gakusei', fr: 'étudiant', en: 'student' },
   { hiragana: 'かいしゃいん', romaji: 'kaishain', fr: 'employé', en: 'employee' },
+  { hiragana: 'せんせい', romaji: 'sensei', fr: 'professeur', en: 'teacher' },
 
-  { hiragana: 'ともだち', romaji: 'tomodachi', fr: 'ami', en: 'friend' }
+  { hiragana: 'ともだち', romaji: 'tomodachi', fr: 'ami', en: 'friend' },
+  { hiragana: 'ちょっと', romaji: 'chotto', fr: 'un petit peu', en: 'a little' },
+  { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
+  { hiragana: 'いいえ', romaji: 'iie', fr: 'non', en: 'no' },
+  { hiragana: 'そうです', romaji: 'sou desu', fr: "c'est vrai, c'est exact", en: "it's true" },
+  { hiragana: 'そうですね', romaji: 'sou desu ne', fr: 'laisse moi réfléchir', en: 'let me think' },
+  { hiragana: 'なまえ', romaji: 'namae', fr: 'nom', en: 'name' },
+  { hiragana: 'わたしの', romaji: 'watashi no', fr: 'mon/ma', en: 'my' },
+  { hiragana: 'すみません', romaji: 'sumimasen', fr: 'pardon, excusez-moi', en: 'sorry, excuse me' }
 ]
