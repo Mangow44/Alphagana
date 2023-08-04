@@ -13,6 +13,7 @@ import GameOptions from '@/components/header/options/GameOptions.vue'
 <style scoped>
 header {
   display: flex;
+  gap: 0.5rem;
 
   padding: 0.4rem 0;
 }

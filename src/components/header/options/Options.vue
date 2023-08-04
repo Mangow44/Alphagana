@@ -23,10 +23,11 @@ const modeStore = useModeStore()
 <style scoped>
 .option {
   display: flex;
+  align-items: center;
   gap: 1rem;
 
   min-width: 15rem;
-  min-height: 2rem;
+  height: fit-content;
   margin: 0.5rem 0;
   padding: 0.3rem;
 
@@ -34,8 +35,9 @@ const modeStore = useModeStore()
 }
 
 .choice {
-  margin-top: 0.1rem;
-  
+  margin-top: 0.3rem;
+  margin-bottom: auto;
+
   font-size: 0.7rem;
 }
 </style>

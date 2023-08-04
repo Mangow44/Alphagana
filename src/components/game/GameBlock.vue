@@ -81,9 +81,10 @@ function resetUserInput(): void {
 .game-container {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 
   width: 20rem;
-  height: auto;
+  height: fit-content;
   margin: auto;
 }
 
@@ -92,16 +93,24 @@ function resetUserInput(): void {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 
   width: 100%;
-  height: 7rem;
-  margin-bottom: 1rem;
-
-  overflow: auto;
+  height: fit-content;
+  margin-bottom: 1.5rem;
 }
 
 .guess-information h2 {
-  font-size: 2.5rem;
+  width: 95%;
+  height: 4rem;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  text-align: center;
+  white-space: nowrap;
+
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -111,10 +120,10 @@ function resetUserInput(): void {
 }
 
 .guess {
-  width: 19rem;
+  width: 95%;
   height: 2rem;
-  padding: 0.5rem;
   margin: auto;
+  padding: 0.5rem;
 
   font-size: 0.9rem;
 
@@ -125,7 +134,8 @@ function resetUserInput(): void {
 
 .actions {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 4.5rem;
 
   margin: 2rem 0;
 }
@@ -146,7 +156,13 @@ function resetUserInput(): void {
 .fb-error {
   visibility: hidden;
 
-  min-height: 2rem;
+  min-height: 3rem;
+  max-height: 6rem;
+  padding: 0 0.3rem;
+
+  overflow: auto;
+
+  text-align: center;
 }
 
 .fb-error .answer {
@@ -156,8 +172,50 @@ function resetUserInput(): void {
 .fb-error.display {
   visibility: visible;
 
-  padding: 0 0.3rem;
-  text-align: center;
   color: var(--c-red);
+}
+
+@media only screen and (min-width: 768px) {
+  .game-container {
+    width: 25rem;
+  }
+
+  .guess-information h2 {
+    font-size: 2.3rem;
+  }
+
+  .guess {
+    height: 2.2rem;
+
+    font-size: 1rem;
+  }
+
+  .actions .validate,
+  .actions .next {
+    width: 6rem;
+    height: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .game-container {
+    width: 27rem;
+  }
+
+  .guess-information h2 {
+    font-size: 2.5rem;
+  }
+
+  .guess {
+    height: 2.5rem;
+
+    font-size: 1.2rem;
+  }
+
+  .actions .validate,
+  .actions .next {
+    width: 7rem;
+    height: 3rem;
+  }
 }
 </style>
