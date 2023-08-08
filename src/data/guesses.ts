@@ -100,5 +100,22 @@ export const guesses: Array<Guess> = [
   { hiragana: 'そうですね', romaji: 'sou desu ne', fr: 'laisse moi réfléchir', en: 'let me think' },
   { hiragana: 'なまえ', romaji: 'namae', fr: 'nom', en: 'name' },
   { hiragana: 'わたしの', romaji: 'watashi no', fr: 'mon/ma', en: 'my' },
-  { hiragana: 'すみません', romaji: 'sumimasen', fr: 'pardon, excusez-moi', en: 'sorry, excuse me' }
+  {
+    hiragana: 'すみません',
+    romaji: 'sumimasen',
+    fr: 'pardon, excusez-moi',
+    en: 'sorry, excuse me'
+  },
+
+  // Nombres
+  { hiragana: 'いち', romaji: 'ichi', fr: 'un', en: 'one' },
+  { hiragana: 'に', romaji: 'ni', fr: 'deux', en: 'two' },
+  { hiragana: 'さん', romaji: 'san', fr: 'trois', en: 'three' },
+  { hiragana: 'し / よん', romaji: 'shi / yon', fr: 'quatre', en: 'four' },
+  { hiragana: 'ご', romaji: 'go', fr: 'cinq', en: 'five' },
+  { hiragana: 'ろく', romaji: 'roku', fr: 'six', en: 'six' },
+  { hiragana: 'しち / なな', romaji: 'sichi / nana', fr: 'sept', en: 'seven' },
+  { hiragana: 'はち', romaji: 'hachi', fr: 'huit', en: 'eight' },
+  { hiragana: 'きゅう', romaji: 'kyuu', fr: 'neuf', en: 'nine' },
+  { hiragana: 'じゅう', romaji: 'juu', fr: 'dix', en: 'ten' }
 ]
