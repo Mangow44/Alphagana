@@ -21,14 +21,14 @@ export const guesses: Array<Guess> = [
   { hiragana: 'ぶらじる', katakana: 'ブラジル', romaji: 'burajiru', fr: 'brésil', en: 'brazil' },
 
   // couleurs
-  { hiragana: 'あかい', katakana: 'アカイ', romaji: 'aka', fr: 'rouge', en: 'red' },
-  { hiragana: 'あおい', katakana: 'アオイ', romaji: 'ao', fr: 'bleu', en: 'blue' },
+  { hiragana: 'あか', katakana: 'アカ', romaji: 'aka', fr: 'rouge', en: 'red' },
+  { hiragana: 'あお', katakana: 'アオ', romaji: 'ao', fr: 'bleu', en: 'blue' },
   { hiragana: 'みどり', katakana: 'ミドリ', romaji: 'midori', fr: 'vert', en: 'green' },
-  { hiragana: 'きいろい', katakana: 'キイロイ', romaji: 'kiiro', fr: 'jaune', en: 'yellow' },
+  { hiragana: 'きいろ', katakana: 'キイロ', romaji: 'kiiro', fr: 'jaune', en: 'yellow' },
   { hiragana: 'おれんじ', katakana: 'オレンジ', romaji: 'orenji', fr: 'orange', en: 'orange' },
   { hiragana: 'ぴんく', katakana: 'ピンク', romaji: 'pinku', fr: 'rose', en: 'pink' },
-  { hiragana: 'くろい', katakana: 'クロイ', romaji: 'kuro', fr: 'noir', en: 'black' },
-  { hiragana: 'しろい', katakana: 'シロイ', romaji: 'shiro', fr: 'blanc', en: 'white' },
+  { hiragana: 'くろ', katakana: 'クロ', romaji: 'kuro', fr: 'noir', en: 'black' },
+  { hiragana: 'しろ', katakana: 'シロ', romaji: 'shiro', fr: 'blanc', en: 'white' },
 
   // météo
   { hiragana: 'たいよう', katakana: 'タイヨウ', romaji: 'taiyou', fr: 'soleil', en: 'sun' },
