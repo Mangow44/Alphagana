@@ -14,10 +14,22 @@ export const useModeStore = defineStore('mode', () => {
       keys: { from: 'hiragana', to: 'romaji' }
     },
     {
+      name: 'KatakanaToRomaji',
+      isActive: false,
+      description: t('mode.KatakanaToRomaji'),
+      keys: { from: 'katakana', to: 'romaji' }
+    },
+    {
       name: 'RomajiToHiragana',
       isActive: false,
       description: t('mode.RomajiToHiragana'),
       keys: { from: 'romaji', to: 'hiragana' }
+    },
+    {
+      name: 'RomajiToKatakana',
+      isActive: false,
+      description: t('mode.RomajiToKatakana'),
+      keys: { from: 'romaji', to: 'katakana' }
     }
   ]
 

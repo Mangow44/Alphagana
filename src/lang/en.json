@@ -9,7 +9,9 @@
   "copyright": "Copyright - 2023 - All rights reserved.",
   "mode": {
     "HiraganaToRomaji": "Hiragana to Romaji",
-    "RomajiToHiragana": "Romaji to Hiragana"
+    "KatakanaToRomaji": "Katakana to Romaji",
+    "RomajiToHiragana": "Romaji to Hiragana",
+    "RomajiToKatakana": "Romaji to Katakana"
   },
   "options": "Traduction's modes"
 }
