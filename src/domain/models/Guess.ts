@@ -1,5 +1,5 @@
 export default interface Guess {
-  romaji: string
-  fr: string
-  en: string
+  guess: string
+  answer: string
+  translation: string
 }

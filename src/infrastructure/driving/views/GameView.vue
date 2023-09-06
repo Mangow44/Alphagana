@@ -1,56 +1,32 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
-import type { availableTraductions } from '@/domain/models/Mode'
-import ModeManager from '@/infrastructure/driving/services/ModeManager'
-import GuessManager from '@/infrastructure/driving/services/GuessManager'
+import { ref, watch } from 'vue'
 import GameBlock from '@/infrastructure/driving/components/game/GameBlock.vue'
-import type Mode from '@/domain/models/Mode'
-import type Katakana from '@/domain/models/Katakana'
-import type Hiragana from '@/domain/models/Hiragana'
+import GameManager from '@/infrastructure/driving/services/GameManager'
+import type Guess from '@/domain/models/Guess'
+import { useModeStore } from '@/infrastructure/driving/stores/modeStore'
 
-const modeManager = new ModeManager()
-const guessManager = new GuessManager()
-const guess = ref<Hiragana | Katakana | null>(null)
-const mode = ref<Mode | null>(null)
-const userLanguage = computed<string>(() => navigator.language.split('-')[0])
+const gameManager = new GameManager()
+const guess = ref<Guess | null>(null)
 
-watch(modeManager.modeStore.modes, () => {
-  generateNewCurrentGuess()
+await generateNewGuess()
+
+watch(useModeStore(), async () => {
+  await generateNewGuess()
 })
 
-async function generateNewCurrentGuess(): Promise<void> {
-  const activeModes: Mode[] = (await modeManager.getModes()).filter((mode) => mode.isActive)
-  mode.value = generateRandomEntityFrom(activeModes)
-
-  if (modeContainsTraduction('hiragana')) {
-    guess.value = generateRandomEntityFrom(await guessManager.getHiraganas())
-  }
-  if (modeContainsTraduction('katakana')) {
-    guess.value = generateRandomEntityFrom(await guessManager.getKatakanas())
-  }
+async function generateNewGuess() {
+  guess.value = await gameManager.generateGuess()
 }
-
-function modeContainsTraduction(traduction: availableTraductions): boolean {
-  return mode.value?.traduction.from === traduction || mode.value?.traduction.to === traduction
-}
-
-function generateRandomEntityFrom(array: any[]): any {
-  const randomIndex: number = Math.floor(Math.random() * array.length)
-
-  return array[randomIndex]
-}
-
-await generateNewCurrentGuess()
 </script>
 
 <template>
   <main>
     <game-block
-      v-if="guess && mode"
-      :guess="guess[mode.traduction.from]"
-      :translation="userLanguage === 'fr' ? guess.fr : guess.en"
-      :answer="guess[mode.traduction.to]"
-      @generate-new-guess="generateNewCurrentGuess()"
+      v-if="guess"
+      :guess="guess.guess"
+      :translation="guess.translation"
+      :answer="guess.answer"
+      @generate-new-guess="generateNewGuess()"
     />
   </main>
 </template>
@@ -63,3 +39,4 @@ main {
   height: 100%;
 }
 </style>
+@/infrastructure/driving/services/JapaneseWordManager

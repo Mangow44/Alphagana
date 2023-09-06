@@ -1,5 +1,5 @@
-import type Guess from '@/domain/models/Guess'
+import type JapaneseWord from '@/domain/models/JapaneseWord'
 
-export default interface Katakana extends Guess {
+export default interface Katakana extends JapaneseWord {
   katakana: string
 }

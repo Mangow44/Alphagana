@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import type Hiragana from '@/domain/models/Hiragana'
 import type Katakana from '@/domain/models/Katakana'
 
-export const useGuessStore = defineStore('guess', () => {
+export const useJapaneseWordStore = defineStore('japaneseWord', () => {
   const hiraganas = ref<Hiragana[]>([])
   const katakanas = ref<Katakana[]>([])
 

@@ -1,19 +1,19 @@
-import type { GuessDto } from '@/infrastructure/driven/dto/GuessDto'
-import GuessMapper from '@/infrastructure/driven/dto/GuessDto'
+import type { JapaneseWordDto } from '@/infrastructure/driven/dto/JapaneseWordDto'
+import JapaneseWordMapper from '@/infrastructure/driven/dto/JapaneseWordDto'
 import type ModelMapper from '@/infrastructure/driven/utils/ModelMapper'
-import type Guess from '@/domain/models/Guess'
 import type Hiragana from '@/domain/models/Hiragana'
+import type JapaneseWord from '@/domain/models/JapaneseWord'
 
-export interface HiraganaDto extends GuessDto {
+export interface HiraganaDto extends JapaneseWordDto {
   hiragana: string
 }
 
 export default class HiraganaMapper implements ModelMapper<Hiragana, HiraganaDto> {
-  private guessMapper: ModelMapper<Guess, GuessDto> = new GuessMapper()
+  private japaneseWordMapper: ModelMapper<JapaneseWord, JapaneseWordDto> = new JapaneseWordMapper()
 
   toEntity(dto: HiraganaDto): Hiragana {
     return {
-      ...this.guessMapper.toEntity({ romaji: dto.romaji, fr: dto.fr, en: dto.en }),
+      ...this.japaneseWordMapper.toEntity({ romaji: dto.romaji, fr: dto.fr, en: dto.en }),
       hiragana: dto.hiragana
     }
   }

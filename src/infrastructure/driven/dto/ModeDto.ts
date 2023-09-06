@@ -1,10 +1,9 @@
-import type { GuessDto } from '@/infrastructure/driven/dto/GuessDto'
 import type { HiraganaDto } from '@/infrastructure/driven/dto/HiraganaDto'
 import type { KatakanaDto } from '@/infrastructure/driven/dto/KatakanaDto'
 import type ModelMapper from '@/infrastructure/driven/utils/ModelMapper'
 import type Mode from '@/domain/models/Mode'
 
-type availableTraductionsDto = keyof GuessDto | keyof HiraganaDto | keyof KatakanaDto
+type availableTraductionsDto = keyof HiraganaDto | keyof KatakanaDto
 
 export interface ModeDto {
   name: string
