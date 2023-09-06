@@ -1,3 +1,3 @@
-import type Guess from '@/domain/models/Guess'
+import type { GuessDto } from '@/infrastructure/driven/dto/GuessDto'
 
-export const hiraganas: Guess[] = [{ japanese: 'おちゃ', romaji: 'ocha', fr: 'thé', en: 'tea' }]
+export const hiraganas: GuessDto[] = [{ japanese: 'おちゃ', romaji: 'ocha', fr: 'thé', en: 'tea' }]
