@@ -1,5 +1,5 @@
-import type { GuessDto } from '@/infrastructure/driven/dto/GuessDto'
+import type { KatakanaDto } from '@/infrastructure/driven/dto/KatakanaDto'
 
-export const katakanas: GuessDto[] = [
-  { japanese: 'ドレス', romaji: 'doresu', fr: 'robe', en: 'dress' }
+export const katakanas: KatakanaDto[] = [
+  { katakana: 'ドレス', romaji: 'doresu', fr: 'robe', en: 'dress' }
 ]

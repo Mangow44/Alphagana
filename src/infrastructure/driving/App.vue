@@ -7,7 +7,9 @@ import ApplicationFooter from '@/infrastructure/driving/components/footer/Applic
 <template>
   <application-header />
 
-  <RouterView />
+  <Suspense>
+    <RouterView />
+  </Suspense>
 
   <application-footer />
 </template>

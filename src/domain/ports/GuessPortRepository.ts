@@ -1,6 +1,7 @@
-import type Guess from '@/domain/models/Guess'
+import type Hiragana from '@/domain/models/Hiragana'
+import type Katakana from '@/domain/models/Katakana'
 
 export default interface GuessPortRepository {
-  getRandomHiragana(): Promise<Guess>
-  getRandomKatakana(): Promise<Guess>
+  getHiraganas(): Promise<Hiragana[]>
+  getKatakanas(): Promise<Katakana[]>
 }

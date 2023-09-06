@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { useModeStore } from '@/infrastructure/driving/stores/modeStore'
 
+const { t } = useI18n()
 const modeStore = useModeStore()
 </script>
 
@@ -15,7 +17,7 @@ const modeStore = useModeStore()
       data-testid="option-input"
     />
     <p>
-      {{ mode.description }}
+      {{ t(`mode.${mode.name}`) }}
     </p>
   </div>
 </template>
