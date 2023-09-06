@@ -1,5 +1,4 @@
 import type { japaneseAlphabetDto } from '@/infrastructure/driven/dto/JapaneseAlphabetDto'
-import type { availableTraductions } from '@/domain/models/Mode'
 import type { GuessDto } from '@/infrastructure/driven/dto/GuessDto'
 import type ModelMapper from '@/infrastructure/driven/dto/ModelMapper'
 import type Mode from '@/domain/models/Mode'
@@ -21,8 +20,8 @@ export default class ModeMapper implements ModelMapper<Mode, ModeDto> {
       name: dto.name,
       isActive: dto.isActive,
       traduction: {
-        from: dto.traduction.from as availableTraductions,
-        to: dto.traduction.to as availableTraductions
+        from: dto.traduction.from,
+        to: dto.traduction.to
       }
     }
   }
