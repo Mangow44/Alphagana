@@ -6,21 +6,21 @@ import Modal from '@/infrastructure/driving/components/assets/Modal.vue'
 import GameOptions from '@/infrastructure/driving/components/header/options/GameOptions.vue'
 
 const { t } = useI18n()
-const displayGameOptions = ref<boolean>(false)
+const isGameOptionsDisplayed = ref<boolean>(false)
 </script>
 
 <template>
   <icon
     :src="'/icons/gear.svg'"
     :alt="'Options'"
-    @click="displayGameOptions = true"
+    @click="isGameOptionsDisplayed = true"
     data-testid="btn-options"
   />
 
   <modal
     :header="t('options')"
-    :show-modal="displayGameOptions"
-    @close-modal="displayGameOptions = false"
+    :show-modal="isGameOptionsDisplayed"
+    @close-modal="isGameOptionsDisplayed = false"
   >
     <game-options />
   </modal>

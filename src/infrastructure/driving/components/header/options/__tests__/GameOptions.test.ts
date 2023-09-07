@@ -1,15 +1,17 @@
-import { shallowMount } from '@vue/test-utils'
-import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
+import { shallowMount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import GameOptions from '@/infrastructure/driving/components/header/options/GameOptions.vue'
 
 import fr from '@/infrastructure/driving/lang/fr.json'
 import en from '@/infrastructure/driving/lang/en.json'
+import { useModeStore } from '@/infrastructure/driving/stores/modeStore'
 
-describe('Game options', () => {
+describe('Game options pane', () => {
   let wrapper: any
 
+  const optionInputDataTestId: string = "[data-testid='option-input']"
   const messages = { fr, en }
   const mockI18n = createI18n({
     legacy: false,
@@ -18,24 +20,31 @@ describe('Game options', () => {
     messages
   })
 
-  const btnOptionsDataTestId: string = "[data-testid='btn-options']"
-
   beforeEach(() => {
     setActivePinia(createPinia())
+    useModeStore().modes = [
+      {
+        name: 'HiraganaToRomaji',
+        isActive: true,
+        traduction: { from: 'hiragana', to: 'romaji' }
+      },
+      {
+        name: 'KatakanaToRomaji',
+        isActive: false,
+        traduction: { from: 'katakana', to: 'romaji' }
+      }
+    ]
     wrapper = shallowMount(GameOptions, { global: { plugins: [mockI18n] } })
   })
 
-  it('On click, toggle is options pane display', async () => {
+  it('Should create options for each mode in mode store', async () => {
     // Given
-    const oldIsOptionsPaneDisplayed: boolean = wrapper.vm.isOptionsPaneDisplayed
-    const btnOptions = wrapper.find(btnOptionsDataTestId)
+    const optionsInput = wrapper.findAll(optionInputDataTestId)
 
     // When
-    await btnOptions.trigger('click')
-    const newIsOptionsPaneDisplayed: boolean = wrapper.vm.isOptionsPaneDisplayed
 
     // Then
-    expect(newIsOptionsPaneDisplayed).not.toEqual(oldIsOptionsPaneDisplayed)
-    expect(newIsOptionsPaneDisplayed).toEqual(!oldIsOptionsPaneDisplayed)
+    expect(optionsInput[0].wrapperElement._modelValue).toBeTruthy()
+    expect(optionsInput[1].wrapperElement._modelValue).toBeFalsy()
   })
 })

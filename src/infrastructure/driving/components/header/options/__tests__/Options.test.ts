@@ -1,34 +1,39 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { createPinia, setActivePinia } from 'pinia'
 import { shallowMount } from '@vue/test-utils'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createI18n } from 'vue-i18n'
 import Options from '@/infrastructure/driving/components/header/options/Options.vue'
 
-describe('Options pane', () => {
-  vi.mock('@/stores/modeStore', () => ({
-    useModeStore: vi.fn().mockReturnValue({
-      modes: [
-        { name: 'HiraganaToRomaji', isActive: true, description: 'Hiragana to Romaji' },
-        { name: 'RomajiToHiragana', isActive: false, description: 'Romaji to Hiragana' }
-      ]
-    })
-  }))
+import fr from '@/infrastructure/driving/lang/fr.json'
+import en from '@/infrastructure/driving/lang/en.json'
 
+describe('Options', () => {
   let wrapper: any
-  const optionInputDataTestId = "[data-testid='option-input']"
 
-  beforeEach(() => {
-    setActivePinia(createPinia())
-    wrapper = shallowMount(Options)
+  const messages = { fr, en }
+  const mockI18n = createI18n({
+    legacy: false,
+    locale: 'fr',
+    fallbackLocale: 'en',
+    messages
   })
 
-  it('Should create options for each mode is mode store', async () => {
+  const btnOptionsDataTestId: string = "[data-testid='btn-options']"
+
+  beforeEach(() => {
+    wrapper = shallowMount(Options, { global: { plugins: [mockI18n] } })
+  })
+
+  it('On click, toggle is options pane display', async () => {
     // Given
-    const optionsInput = wrapper.findAll(optionInputDataTestId)
+    const oldIsGameOptionsDisplayed: boolean = wrapper.vm.isGameOptionsDisplayed
+    const btnOptions = wrapper.find(btnOptionsDataTestId)
 
     // When
+    await btnOptions.trigger('click')
+    const newIsGameOptionsDisplayed: boolean = wrapper.vm.isGameOptionsDisplayed
 
     // Then
-    expect(optionsInput[0].wrapperElement._modelValue).toBeTruthy()
-    expect(optionsInput[1].wrapperElement._modelValue).toBeFalsy()
+    expect(newIsGameOptionsDisplayed).not.toEqual(oldIsGameOptionsDisplayed)
+    expect(newIsGameOptionsDisplayed).toEqual(!oldIsGameOptionsDisplayed)
   })
 })

@@ -20,7 +20,7 @@ const dialog = ref<HTMLDialogElement | null>(null)
 </script>
 
 <template>
-  <dialog ref="dialog" @click.self="emit('closeModal')">
+  <dialog ref="dialog" @click.self="emit('closeModal')" data-testid="dialog">
     <div class="modal">
       <div class="header">
         <span class="title">{{ header }}</span>

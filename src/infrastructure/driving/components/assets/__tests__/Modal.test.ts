@@ -5,19 +5,19 @@ import Modal from '@/infrastructure/driving/components/assets/Modal.vue'
 describe('Modal', () => {
   let wrapper: any
 
-  const blurDataTestId: string = "[data-testid='blur']"
+  const dialogDataTestId: string = "[data-testid='dialog']"
   const btnCloseDataTestId: string = "[data-testid='btn-close']"
 
   beforeEach(() => {
     wrapper = shallowMount(Modal)
   })
 
-  it('emit close modal when clicked on blur', async () => {
+  it('emit close modal when clicked on dialog', async () => {
     // Given
-    const blur = wrapper.find(blurDataTestId)
+    const dialog = wrapper.find(dialogDataTestId)
 
     // When
-    await blur.trigger('click')
+    await dialog.trigger('click')
 
     // Then
     expect(wrapper.emitted('closeModal')).toBeTruthy()
