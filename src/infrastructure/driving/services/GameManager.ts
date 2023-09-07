@@ -50,13 +50,13 @@ export default class GameManager {
 
     switch (mode.traduction.to) {
       case 'hiragana':
-        guess.guess = (japaneseWord as Hiragana).hiragana
+        guess.answer = (japaneseWord as Hiragana).hiragana
         break
       case 'katakana':
-        guess.guess = (japaneseWord as Katakana).katakana
+        guess.answer = (japaneseWord as Katakana).katakana
         break
       default:
-        guess.guess = japaneseWord[mode.traduction.to]
+        guess.answer = japaneseWord[mode.traduction.to]
         break
     }
 

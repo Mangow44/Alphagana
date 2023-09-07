@@ -5,13 +5,13 @@ const props = defineProps<{
 </script>
 
 <template>
-  <button>
+  <button class="custom-button">
     {{ props.content }}
   </button>
 </template>
 
 <style scoped>
-button {
+.custom-button {
   width: fit-content;
   height: 2.5rem;
   padding: 0.3rem;
@@ -28,11 +28,11 @@ button {
   box-shadow: var(--c-black) 4px 4px;
 }
 
-button:hover {
-    filter: brightness(0.7);
+.custom-button:hover {
+  filter: brightness(0.7);
 }
 
-button:active {
+.custom-button:active {
   transform: translate3d(4px, 4px, 0);
   box-shadow: none;
 }

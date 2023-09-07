@@ -1,34 +1,45 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Icon from '@/infrastructure/driving/components/assets/Icon.vue'
-import Modal from '@/infrastructure/driving/components/assets/Modal.vue'
-import Options from '@/infrastructure/driving/components/header/options/Options.vue'
+import { useModeStore } from '@/infrastructure/driving/stores/modeStore'
 
 const { t } = useI18n()
-const isOptionsPaneDisplayed = ref<boolean>(false)
+const modeStore = useModeStore()
 </script>
 
 <template>
-  <icon
-    :src="'/icons/gear.svg'"
-    :alt="'Options'"
-    @click="isOptionsPaneDisplayed = !isOptionsPaneDisplayed"
-    class="btn-options"
-    data-testid="btn-options"
-  />
-
-  <modal
-    v-if="isOptionsPaneDisplayed"
-    :header="t('options')"
-    @close-modal="isOptionsPaneDisplayed = false"
-  >
-    <options />
-  </modal>
+  <div class="option" v-for="mode in modeStore.modes">
+    <input
+      v-model="mode.isActive"
+      :id="mode.name"
+      :name="mode.name"
+      type="checkbox"
+      class="choice"
+      data-testid="option-input"
+    />
+    <p>
+      {{ t(`mode.${mode.name}`) }}
+    </p>
+  </div>
 </template>
 
 <style scoped>
-.btn-options {
-  margin-right: 1rem;
+.option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 15rem;
+  height: fit-content;
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+
+  font-size: 0.9rem;
+}
+
+.choice {
+  margin-top: 0.15rem;
+  margin-bottom: auto;
+
+  font-size: 0.7rem;
 }
 </style>

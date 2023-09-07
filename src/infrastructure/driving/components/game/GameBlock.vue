@@ -13,16 +13,16 @@ const emit = defineEmits<{
   (e: 'generateNewGuess'): void
 }>()
 
-const { t } = useI18n()
-const userGuessValue = ref<string | null>(null)
-const feedbackError = ref<string | null>(null)
-
 watch(props, () => {
   resetFeedbackError()
   resetUserInput()
 })
 
-function isUserGuessValueValid(): void {
+const { t } = useI18n()
+const userGuessValue = ref<string | null>(null)
+const feedbackError = ref<string | null>(null)
+
+function isAnswerCorrect(): void {
   if (props.answer.toLowerCase() === userGuessValue.value?.toLowerCase()) {
     emit('generateNewGuess')
   } else {
@@ -48,7 +48,7 @@ function resetUserInput(): void {
 
     <input
       v-model="userGuessValue"
-      @keyup.enter="isUserGuessValueValid()"
+      @keyup.enter="isAnswerCorrect()"
       class="guess"
       type="text"
       placeholder="..."
@@ -58,7 +58,7 @@ function resetUserInput(): void {
     <div class="actions">
       <custom-button
         :content="t('actions.validate')"
-        @click="isUserGuessValueValid()"
+        @click="isAnswerCorrect()"
         class="validate"
         data-testid="validate-btn"
       />
@@ -102,7 +102,7 @@ function resetUserInput(): void {
 
 .guess-information h2 {
   width: 95%;
-  height: 4rem;
+  height: 3.2rem;
 
   overflow-y: hidden;
   overflow-x: auto;

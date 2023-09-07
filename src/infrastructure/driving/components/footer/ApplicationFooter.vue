@@ -34,10 +34,13 @@ footer {
   background-color: var(--c-light-black);
 }
 
+footer > * {
+  flex-shrink: 0;
+}
+
 .contacts {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 
   margin-right: auto;
 
@@ -52,7 +55,6 @@ footer {
 .app-information {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 
   margin-right: 1rem;
 

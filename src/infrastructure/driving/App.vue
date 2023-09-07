@@ -7,9 +7,20 @@ import ApplicationFooter from '@/infrastructure/driving/components/footer/Applic
 <template>
   <application-header />
 
-  <Suspense>
-    <RouterView />
-  </Suspense>
+  <main>
+    <Suspense>
+      <RouterView />
+    </Suspense>
+  </main>
 
   <application-footer />
 </template>
+
+<style scoped>
+main {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+}
+</style>

@@ -1,45 +1,27 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useModeStore } from '@/infrastructure/driving/stores/modeStore'
+import Icon from '@/infrastructure/driving/components/assets/Icon.vue'
+import Modal from '@/infrastructure/driving/components/assets/Modal.vue'
+import GameOptions from '@/infrastructure/driving/components/header/options/GameOptions.vue'
 
 const { t } = useI18n()
-const modeStore = useModeStore()
+const displayGameOptions = ref<boolean>(false)
 </script>
 
 <template>
-  <div class="option" v-for="mode in modeStore.modes">
-    <input
-      class="choice"
-      type="checkbox"
-      :name="mode.name"
-      :id="mode.name"
-      v-model="mode.isActive"
-      data-testid="option-input"
-    />
-    <p>
-      {{ t(`mode.${mode.name}`) }}
-    </p>
-  </div>
+  <icon
+    :src="'/icons/gear.svg'"
+    :alt="'Options'"
+    @click="displayGameOptions = true"
+    data-testid="btn-options"
+  />
+
+  <modal
+    :header="t('options')"
+    :show-modal="displayGameOptions"
+    @close-modal="displayGameOptions = false"
+  >
+    <game-options />
+  </modal>
 </template>
-
-<style scoped>
-.option {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  min-width: 15rem;
-  height: fit-content;
-  margin: 0.5rem 0;
-  padding: 0.3rem;
-
-  font-size: 0.9rem;
-}
-
-.choice {
-  margin-top: 0.3rem;
-  margin-bottom: auto;
-
-  font-size: 0.7rem;
-}
-</style>
