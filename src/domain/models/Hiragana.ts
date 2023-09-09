@@ -1,5 +1,5 @@
-import type JapaneseWord from '@/domain/models/JapaneseWord'
+import type JapaneseTranslation from '@/domain/models/JapaneseTranslation'
 
-export default interface Hiragana extends JapaneseWord {
+export default interface Hiragana extends JapaneseTranslation {
   hiragana: string
 }
