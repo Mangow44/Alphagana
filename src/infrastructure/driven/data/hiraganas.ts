@@ -27,7 +27,7 @@ export const hiraganas: HiraganaDto[] = [
     en: 'sorry, excuse me'
   },
   { hiragana: 'ありがとう', romaji: 'arigatou', fr: 'merci', en: 'thank you' },
-  { hiragana: 'おねがいします', romaji: 'onegai shimasu', fr: "s'il vout plaît", en: 'please' },
+  { hiragana: 'おねがいします', romaji: 'onegai shimasu', fr: "s'il vous plaît", en: 'please' },
 
   // Adverbes
   { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
@@ -104,6 +104,7 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'はち', romaji: 'hachi', fr: 'huit', en: 'eight' },
   { hiragana: 'きゅう / く', romaji: 'kyuu / ku', fr: 'neuf', en: 'nine' },
   { hiragana: 'じゅう', romaji: 'juu', fr: 'dix', en: 'ten' },
+  { hiragana: 'ひゃく', romaji: 'hyaku', fr: 'cent', en: 'one hundred' },
 
   // Couleurs
   { hiragana: 'しろ', romaji: 'shiro', fr: 'blanc', en: 'white' },
@@ -119,5 +120,21 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'じ', romaji: 'ji', fr: 'heure', en: 'hours' },
 
   // Maison
-  { hiragana: 'いえ ', romaji: 'ie', fr: 'maison', en: 'house' }
+  { hiragana: 'いえ ', romaji: 'ie', fr: 'maison', en: 'house' },
+
+  // Transports
+  { hiragana: 'ひこうき ', romaji: 'hikouki', fr: 'avion', en: 'plane' },
+  { hiragana: 'ふね ', romaji: 'fune', fr: 'bateau', en: 'boat' },
+  { hiragana: 'でんしゃ ', romaji: 'densha', fr: 'train', en: 'train' },
+  { hiragana: 'しんかんせん ', romaji: 'shinkansen', fr: 'TGV', en: 'HSR' },
+  { hiragana: 'くるま ', romaji: 'kuruma', fr: 'voiture', en: 'car' },
+  { hiragana: 'じてんしゃ ', romaji: 'jitensha', fr: 'vélo', en: 'bike' },
+
+  // Directions
+  { hiragana: 'ひだり ', romaji: 'hidari', fr: 'gauche', en: 'left' },
+  { hiragana: 'みぎ ', romaji: 'migi', fr: 'droite', en: 'right' },
+  { hiragana: 'きた ', romaji: 'kita', fr: 'nord', en: 'north' },
+  { hiragana: 'ひがし', romaji: 'higashi', fr: 'est (direction)', en: 'east' },
+  { hiragana: 'みなみ ', romaji: 'minami', fr: 'sud', en: 'south' },
+  { hiragana: 'にし ', romaji: 'nishi', fr: 'ouest', en: 'west' }
 ]

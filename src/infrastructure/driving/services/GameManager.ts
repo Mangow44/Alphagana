@@ -74,11 +74,6 @@ export default class GameManager {
     return this.generateRandomEntityFromArray(activeModes)
   }
 
-  private generateRandomEntityFromArray<T>(array: T[]): T {
-    const randomIndex: number = Math.floor(Math.random() * array.length)
-    return array[randomIndex]
-  }
-
   private generateUniqueEntity(
     array: Hiragana[] | Katakana[],
     usedEntities: Set<Hiragana | Katakana>
@@ -93,5 +88,10 @@ export default class GameManager {
       this.generateRandomEntityFromArray(availableEntities)
     usedEntities.add(selectedEntity)
     return selectedEntity
+  }
+
+  private generateRandomEntityFromArray<T>(array: T[]): T {
+    const randomIndex: number = Math.floor(Math.random() * array.length)
+    return array[randomIndex]
   }
 }

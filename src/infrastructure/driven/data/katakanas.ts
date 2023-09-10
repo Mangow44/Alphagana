@@ -19,5 +19,10 @@ export const katakanas: KatakanaDto[] = [
   { katakana: 'ドレス', romaji: 'doresu', fr: 'robe', en: 'dress' },
 
   // Nourriture
-  { katakana: 'チーズ', romaji: 'chiizu', fr: 'fromage', en: 'cheese' }
+  { katakana: 'チーズ', romaji: 'chiizu', fr: 'fromage', en: 'cheese' },
+
+  // Transports
+  { katakana: 'タクシー', romaji: 'takushii', fr: 'taxi', en: 'taxi' },
+  { katakana: 'バス', romaji: 'basu', fr: 'bus', en: 'bus' },
+  { katakana: 'オートバイ', romaji: 'outobai', fr: 'moto', en: 'motor-bike' }
 ]
