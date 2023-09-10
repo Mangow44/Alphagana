@@ -8,7 +8,9 @@ import type Mode from '@/domain/models/Mode'
 export default class GameManager {
   constructor(
     private japaneseWordManager = new JapaneseWordManager(),
-    private modeManager = new ModeManager()
+    private modeManager = new ModeManager(),
+    private usedHiraganaEntities: Set<Hiragana> = new Set(),
+    private usedKatakanaEntities: Set<Katakana> = new Set()
   ) {}
 
   public async generateGuess(): Promise<Guess | null> {
@@ -24,13 +26,15 @@ export default class GameManager {
     if (!mode) return null
 
     if (mode.traduction.from === 'hiragana' || mode.traduction.to === 'hiragana') {
-      japaneseWord = this.generateRandomEntityFromArray(
-        await this.japaneseWordManager.getHiraganas()
+      japaneseWord = this.generateUniqueEntity(
+        await this.japaneseWordManager.getHiraganas(),
+        this.usedHiraganaEntities
       )
     }
     if (mode.traduction.from === 'katakana' || mode.traduction.to === 'katakana') {
-      japaneseWord = this.generateRandomEntityFromArray(
-        await this.japaneseWordManager.getKatakanas()
+      japaneseWord = this.generateUniqueEntity(
+        await this.japaneseWordManager.getKatakanas(),
+        this.usedKatakanaEntities
       )
     }
 
@@ -73,5 +77,21 @@ export default class GameManager {
   private generateRandomEntityFromArray<T>(array: T[]): T {
     const randomIndex: number = Math.floor(Math.random() * array.length)
     return array[randomIndex]
+  }
+
+  private generateUniqueEntity(
+    array: Hiragana[] | Katakana[],
+    usedEntities: Set<Hiragana | Katakana>
+  ): Hiragana | Katakana {
+    if (usedEntities.size === array.length) {
+      usedEntities.clear()
+    }
+
+    const availableEntities = array.filter((entity) => !usedEntities.has(entity))
+
+    const selectedEntity: Hiragana | Katakana =
+      this.generateRandomEntityFromArray(availableEntities)
+    usedEntities.add(selectedEntity)
+    return selectedEntity
   }
 }
