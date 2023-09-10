@@ -24,5 +24,8 @@ export const katakanas: KatakanaDto[] = [
   // Transports
   { katakana: 'タクシー', romaji: 'takushii', fr: 'taxi', en: 'taxi' },
   { katakana: 'バス', romaji: 'basu', fr: 'bus', en: 'bus' },
-  { katakana: 'オートバイ', romaji: 'outobai', fr: 'moto', en: 'motor-bike' }
+  { katakana: 'オートバイ', romaji: 'outobai', fr: 'moto', en: 'motor-bike' },
+
+  // Lieux
+  { katakana: 'ホテル', romaji: 'hoteru', fr: 'hôtel', en: 'hotel' }
 ]

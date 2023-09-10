@@ -43,15 +43,15 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'ここ', romaji: 'koko', fr: 'ici', en: 'here' },
   { hiragana: 'あそこ', romaji: 'asoko', fr: 'là-bas', en: 'over there' },
   { hiragana: 'ちょっと', romaji: 'chotto', fr: 'un petit peu', en: 'a little' },
-  { hiragana: 'もっと ', romaji: 'motto', fr: 'plus, encore', en: 'more' },
-  { hiragana: 'とても ', romaji: 'totemo', fr: 'beaucoup, très', en: 'a lot, very' },
-  { hiragana: 'よく ', romaji: 'yoku', fr: 'souvent', en: 'often' },
-  { hiragana: 'もう ', romaji: 'mou', fr: 'déjà', en: 'already' },
+  { hiragana: 'もっと', romaji: 'motto', fr: 'plus, encore', en: 'more' },
+  { hiragana: 'とても', romaji: 'totemo', fr: 'beaucoup, très', en: 'a lot, very' },
+  { hiragana: 'よく', romaji: 'yoku', fr: 'souvent', en: 'often' },
+  { hiragana: 'もう', romaji: 'mou', fr: 'déjà', en: 'already' },
 
   // Adjectifs
-  { hiragana: 'たくさん ', romaji: 'takusan', fr: 'beaucoup (quantité)', en: 'a lot' },
-  { hiragana: 'おおきい ', romaji: 'ookii', fr: 'grand', en: 'tall' },
-  { hiragana: 'ちいさい ', romaji: 'chiisai', fr: 'petit', en: 'small' },
+  { hiragana: 'たくさん', romaji: 'takusan', fr: 'beaucoup (quantité)', en: 'a lot' },
+  { hiragana: 'おおきい', romaji: 'ookii', fr: 'grand', en: 'tall' },
+  { hiragana: 'ちいさい', romaji: 'chiisai', fr: 'petit', en: 'small' },
   { hiragana: 'わたしの', romaji: 'watashi no', fr: 'mon / ma', en: 'my' },
   { hiragana: 'あなたの', romaji: 'anata no', fr: 'ton / ta', en: 'your' },
 
@@ -120,21 +120,37 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'じ', romaji: 'ji', fr: 'heure', en: 'hours' },
 
   // Maison
-  { hiragana: 'いえ ', romaji: 'ie', fr: 'maison', en: 'house' },
+  { hiragana: 'いえ', romaji: 'ie', fr: 'maison', en: 'house' },
 
   // Transports
-  { hiragana: 'ひこうき ', romaji: 'hikouki', fr: 'avion', en: 'plane' },
-  { hiragana: 'ふね ', romaji: 'fune', fr: 'bateau', en: 'boat' },
-  { hiragana: 'でんしゃ ', romaji: 'densha', fr: 'train', en: 'train' },
-  { hiragana: 'しんかんせん ', romaji: 'shinkansen', fr: 'TGV', en: 'HSR' },
-  { hiragana: 'くるま ', romaji: 'kuruma', fr: 'voiture', en: 'car' },
-  { hiragana: 'じてんしゃ ', romaji: 'jitensha', fr: 'vélo', en: 'bike' },
+  { hiragana: 'ひこうき', romaji: 'hikouki', fr: 'avion', en: 'plane' },
+  { hiragana: 'ふね', romaji: 'fune', fr: 'bateau', en: 'boat' },
+  { hiragana: 'でんしゃ', romaji: 'densha', fr: 'train', en: 'train' },
+  { hiragana: 'しんかんせん', romaji: 'shinkansen', fr: 'TGV', en: 'HSR' },
+  { hiragana: 'くるま', romaji: 'kuruma', fr: 'voiture', en: 'car' },
+  { hiragana: 'じてんしゃ', romaji: 'jitensha', fr: 'vélo', en: 'bike' },
 
   // Directions
-  { hiragana: 'ひだり ', romaji: 'hidari', fr: 'gauche', en: 'left' },
-  { hiragana: 'みぎ ', romaji: 'migi', fr: 'droite', en: 'right' },
-  { hiragana: 'きた ', romaji: 'kita', fr: 'nord', en: 'north' },
+  { hiragana: 'まっすぐ', romaji: 'massugu', fr: 'tout droit', en: 'straight ahead' },
+  { hiragana: 'ひだり', romaji: 'hidari', fr: 'gauche', en: 'left' },
+  { hiragana: 'みぎ', romaji: 'migi', fr: 'droite', en: 'right' },
+  { hiragana: 'きた', romaji: 'kita', fr: 'nord', en: 'north' },
   { hiragana: 'ひがし', romaji: 'higashi', fr: 'est (direction)', en: 'east' },
-  { hiragana: 'みなみ ', romaji: 'minami', fr: 'sud', en: 'south' },
-  { hiragana: 'にし ', romaji: 'nishi', fr: 'ouest', en: 'west' }
+  { hiragana: 'みなみ', romaji: 'minami', fr: 'sud', en: 'south' },
+  { hiragana: 'にし', romaji: 'nishi', fr: 'ouest', en: 'west' },
+
+  // Lieux
+  { hiragana: 'ぎんこう', romaji: 'ginkoo', fr: 'banque', en: 'bank' },
+  { hiragana: 'えき', romaji: 'eki', fr: 'gare', en: 'train station' },
+  { hiragana: 'びょういん', romaji: 'biyoin', fr: 'hôpital', en: 'hospital' },
+  { hiragana: 'まちのちゅしん', romaji: 'machi no chushin', fr: 'centre-ville', en: 'downtown' },
+
+  // Jours de la semaine
+  { hiragana: 'げつようび', romaji: 'getsuyoobi', fr: 'lundi', en: 'monday' },
+  { hiragana: 'かようび', romaji: 'kayoobi', fr: 'mardi', en: 'tuesday' },
+  { hiragana: 'すいようび', romaji: 'suiyoobi', fr: 'mercredi', en: 'wednesday' },
+  { hiragana: 'もくようび', romaji: 'mokuyoobi', fr: 'jeudi', en: 'thursday' },
+  { hiragana: 'きんようび', romaji: 'kinyoobi', fr: 'vendredi', en: 'friday' },
+  { hiragana: 'どようび', romaji: 'doyoobi', fr: 'samedi', en: 'saturday' },
+  { hiragana: 'にちようび', romaji: 'nichiyoobi', fr: 'dimanche', en: 'sunday' }
 ]
