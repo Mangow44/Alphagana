@@ -1,6 +1,21 @@
 import type { HiraganaDto } from '@/infrastructure/driven/dto/HiraganaDto'
 
 export const hiraganas: HiraganaDto[] = [
+  // Communication
+  { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
+  { hiragana: 'いいえ', romaji: 'iie', fr: 'non', en: 'no' },
+  // https://furansujapon.com/voyage/top-100-mots-japonais/
+
+  // Pronoms
+  { hiragana: 'わたし', romaji: 'watashi', fr: 'je / moi', en: 'I / me' },
+  { hiragana: 'あなた', romaji: 'anata', fr: 'tu / toi', en: 'you' },
+  { hiragana: 'おかあさん', romaji: 'okaasan', fr: 'maman', en: 'mom' },
+  { hiragana: 'おにいさん', romaji: 'oniisan', fr: 'grand-frère', en: 'big brother' },
+  { hiragana: 'おねえさん', romaji: 'oneesan', fr: 'grande-soeur', en: 'big sister' },
+  { hiragana: 'おとうと', romaji: 'otouto', fr: 'petit-frère', en: 'little brother' },
+  { hiragana: 'いもうと', romaji: 'imouto', fr: 'petite-soeur', en: 'little sister' },
+  { hiragana: 'ともだち', romaji: 'tomodachi', fr: 'ami', en: 'friend' },
+
   // Nom commun
   { hiragana: 'なまえ', romaji: 'namae', fr: 'nom', en: 'name' },
   { hiragana: 'だれ', romaji: 'dare', fr: 'qui', en: 'who' },
@@ -30,8 +45,6 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'おねがいします', romaji: 'onegai shimasu', fr: "s'il vous plaît", en: 'please' },
 
   // Adverbes
-  { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
-  { hiragana: 'いいえ', romaji: 'iie', fr: 'non', en: 'no' },
   { hiragana: 'どこ', romaji: 'doko', fr: 'où', en: 'where' },
   { hiragana: 'どう', romaji: 'dou', fr: "comment (c'est comment ?)", en: 'how (how is it ?)' },
   {
@@ -140,17 +153,31 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'にし', romaji: 'nishi', fr: 'ouest', en: 'west' },
 
   // Lieux
-  { hiragana: 'ぎんこう', romaji: 'ginkoo', fr: 'banque', en: 'bank' },
+  { hiragana: 'ぎんこう', romaji: 'ginkou', fr: 'banque', en: 'bank' },
   { hiragana: 'えき', romaji: 'eki', fr: 'gare', en: 'train station' },
   { hiragana: 'びょういん', romaji: 'biyoin', fr: 'hôpital', en: 'hospital' },
   { hiragana: 'まちのちゅしん', romaji: 'machi no chushin', fr: 'centre-ville', en: 'downtown' },
 
   // Jours de la semaine
-  { hiragana: 'げつようび', romaji: 'getsuyoobi', fr: 'lundi', en: 'monday' },
-  { hiragana: 'かようび', romaji: 'kayoobi', fr: 'mardi', en: 'tuesday' },
-  { hiragana: 'すいようび', romaji: 'suiyoobi', fr: 'mercredi', en: 'wednesday' },
-  { hiragana: 'もくようび', romaji: 'mokuyoobi', fr: 'jeudi', en: 'thursday' },
-  { hiragana: 'きんようび', romaji: 'kinyoobi', fr: 'vendredi', en: 'friday' },
-  { hiragana: 'どようび', romaji: 'doyoobi', fr: 'samedi', en: 'saturday' },
-  { hiragana: 'にちようび', romaji: 'nichiyoobi', fr: 'dimanche', en: 'sunday' }
+  { hiragana: 'げつようび', romaji: 'getsuyoubi', fr: 'lundi', en: 'monday' },
+  { hiragana: 'かようび', romaji: 'kayoubi', fr: 'mardi', en: 'tuesday' },
+  { hiragana: 'すいようび', romaji: 'suiyoubi', fr: 'mercredi', en: 'wednesday' },
+  { hiragana: 'もくようび', romaji: 'mokuyoubi', fr: 'jeudi', en: 'thursday' },
+  { hiragana: 'きんようび', romaji: 'kinyoubi', fr: 'vendredi', en: 'friday' },
+  { hiragana: 'どようび', romaji: 'doyoubi', fr: 'samedi', en: 'saturday' },
+  { hiragana: 'にちようび', romaji: 'nichiyoubi', fr: 'dimanche', en: 'sunday' },
+
+  // Mois de la semaine
+  { hiragana: 'いちがつ', romaji: 'ichigatsu', fr: 'janvier', en: 'january' },
+  { hiragana: 'にがつ', romaji: 'nigatsu', fr: 'février', en: 'febuary' },
+  { hiragana: 'さんがつ', romaji: 'sangatsu', fr: 'mars', en: 'march' },
+  { hiragana: 'しがつ', romaji: 'shigatsu', fr: 'avril', en: 'april' },
+  { hiragana: 'ごがつ', romaji: 'gogatsu', fr: 'mai', en: 'may' },
+  { hiragana: 'ろくがつ', romaji: 'rokugatsu', fr: 'juin', en: 'june' },
+  { hiragana: 'しちがつ', romaji: 'shichigatsu', fr: 'juillet', en: 'july' },
+  { hiragana: 'はちがつ', romaji: 'hachigatsu', fr: 'août', en: 'august' },
+  { hiragana: 'くがつ', romaji: 'kugatsu', fr: 'septembre', en: 'september' },
+  { hiragana: 'じゅうがつ', romaji: 'juugatsu', fr: 'octobre', en: 'october' },
+  { hiragana: 'じゅういちがつ', romaji: 'juuichigatsu', fr: 'novembre', en: 'november' },
+  { hiragana: 'じゅうにがつ', romaji: 'juunigatsu', fr: 'décembre', en: 'december' }
 ]
