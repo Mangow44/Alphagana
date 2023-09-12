@@ -74,17 +74,17 @@ export default class GameManager {
     return this.generateRandomEntityFromArray(activeModes)
   }
 
-  private generateUniqueEntity(
-    array: Hiragana[] | Katakana[],
-    usedEntities: Set<Hiragana | Katakana>
-  ): Hiragana | Katakana {
+  private generateUniqueEntity<T extends Hiragana | Katakana>(
+    array: T[],
+    usedEntities: Set<T>
+  ): T {
     if (usedEntities.size === array.length) {
       usedEntities.clear()
     }
 
-    const availableEntities = array.filter((entity) => !usedEntities.has(entity))
+    const availableEntities = array.filter((entity: T) => !usedEntities.has(entity))
 
-    const selectedEntity: Hiragana | Katakana =
+    const selectedEntity: T =
       this.generateRandomEntityFromArray(availableEntities)
     usedEntities.add(selectedEntity)
     return selectedEntity
