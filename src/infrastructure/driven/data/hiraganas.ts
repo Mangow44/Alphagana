@@ -1,10 +1,16 @@
 import type { HiraganaDto } from '@/infrastructure/driven/dto/HiraganaDto'
 
+// https://furansujapon.com/voyage/top-100-mots-japonais/
+
 export const hiraganas: HiraganaDto[] = [
   // Communication
   { hiragana: 'はい', romaji: 'hai', fr: 'oui', en: 'yes' },
   { hiragana: 'いいえ', romaji: 'iie', fr: 'non', en: 'no' },
-  // https://furansujapon.com/voyage/top-100-mots-japonais/
+  { hiragana: 'わかりません', romaji: 'wakarimasen', fr: 'je ne comprends pas', en: "I don't understand" },
+  { hiragana: 'しりません', romaji: 'shirimasen', fr: 'je ne sais pas', en: "I don't know" },
+  { hiragana: 'わすれました', romaji: 'wasuremashita', fr: "j'ai oublié", en: 'I forgot' },
+  { hiragana: 'たぶん', romaji: 'tabun', fr: 'peut-être', en: 'maybe' },
+  { hiragana: 'だいじょうぶ', romaji: 'daijoubu', fr: 'ça va', en: "I'm good" },
 
   // Pronoms
   { hiragana: 'わたし', romaji: 'watashi', fr: 'je / moi', en: 'I / me' },
@@ -35,24 +41,15 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'またあした', romaji: 'mata ashita', fr: 'à demain', en: 'see you tomorrow' },
   { hiragana: 'しつれいします', romaji: 'shitsurei shimasu', fr: 'au revoir', en: 'goodbye' },
   { hiragana: 'さようなら', romaji: 'sayounara', fr: 'au revoir (adieu)', en: 'farewell' },
-  {
-    hiragana: 'すみません',
-    romaji: 'sumimasen',
-    fr: 'pardon, excusez-moi',
-    en: 'sorry, excuse me'
-  },
+  { hiragana: 'すみません', romaji: 'sumimasen', fr: 'désolé, excusez-moi', en: 'sorry, excuse me' },
+  { hiragana: 'ごめんなさい', romaji: 'gomennasai', fr: 'pardon', en: 'sorry' },
   { hiragana: 'ありがとう', romaji: 'arigatou', fr: 'merci', en: 'thank you' },
   { hiragana: 'おねがいします', romaji: 'onegai shimasu', fr: "s'il vous plaît", en: 'please' },
 
   // Adverbes
   { hiragana: 'どこ', romaji: 'doko', fr: 'où', en: 'where' },
   { hiragana: 'どう', romaji: 'dou', fr: "comment (c'est comment ?)", en: 'how (how is it ?)' },
-  {
-    hiragana: 'どうやって',
-    romaji: 'douyatte',
-    fr: 'comment (par quel moyen ?)',
-    en: 'how (in what way ?)'
-  },
+  { hiragana: 'どうやって', romaji: 'douyatte', fr: 'comment (par quel moyen ?)', en: 'how (in what way ?)' },
   { hiragana: 'ここ', romaji: 'koko', fr: 'ici', en: 'here' },
   { hiragana: 'あそこ', romaji: 'asoko', fr: 'là-bas', en: 'over there' },
   { hiragana: 'ちょっと', romaji: 'chotto', fr: 'un petit peu', en: 'a little' },
@@ -71,12 +68,7 @@ export const hiraganas: HiraganaDto[] = [
   // Professions
   { hiragana: 'がくせい', romaji: 'gakusei', fr: 'étudiant', en: 'student' },
   { hiragana: 'こうこうせい', romaji: 'koukousei', fr: 'lycéen', en: 'high school student' },
-  {
-    hiragana: 'だいがくせい',
-    romaji: 'daigakusei',
-    fr: "étudiant à l'université",
-    en: 'university student'
-  },
+  { hiragana: 'だいがくせい', romaji: 'daigakusei', fr: "étudiant à l'université", en: 'university student' },
   { hiragana: 'かいしゃいん', romaji: 'kaishain', fr: 'employé', en: 'employee' },
   { hiragana: 'せんせい', romaji: 'sensei', fr: 'professeur', en: 'teacher' },
   { hiragana: 'いしゃ', romaji: 'isha', fr: 'médecin, docteur', en: 'doctor' },
@@ -86,19 +78,9 @@ export const hiraganas: HiraganaDto[] = [
   { hiragana: 'おいしい', romaji: 'oiishi', fr: 'délicieux, savoureux', en: 'delicious, tasty' },
   { hiragana: 'おちゃ', romaji: 'ocha', fr: 'thé', en: 'tea' },
   { hiragana: 'おこのみやき', romaji: 'okonomiyaki', fr: 'crêpe salée', en: 'crepe (salty)' },
-  {
-    hiragana: 'さしみ',
-    romaji: 'sashimi',
-    fr: 'poisson cru frais en tranche',
-    en: 'sliced fresh raw fish'
-  },
+  { hiragana: 'さしみ', romaji: 'sashimi', fr: 'poisson cru frais en tranche', en: 'sliced fresh raw fish' },
   { hiragana: 'しゃぶしゃぶ', romaji: 'shabushabu', fr: 'râgout de viande', en: 'meat stew' },
-  {
-    hiragana: 'てんぷら',
-    romaji: 'tenpura',
-    fr: 'poisson ou légume frit et pané',
-    en: 'fried and breaded fish or vegetable'
-  },
+  { hiragana: 'てんぷら', romaji: 'tenpura', fr: 'poisson ou légume frit et pané', en: 'fried and breaded fish or vegetable'},
 
   // Saisons
   { hiragana: 'はる', romaji: 'haru', fr: 'printemps', en: 'spring' },
@@ -131,6 +113,10 @@ export const hiraganas: HiraganaDto[] = [
   // Temporalité
   { hiragana: 'いま', romaji: 'ima', fr: 'maintenant', en: 'now' },
   { hiragana: 'じ', romaji: 'ji', fr: 'heure', en: 'hours' },
+  { hiragana: 'あさ', romaji: 'asa', fr: 'matin', en: 'morning' },
+  { hiragana: 'ひる', romaji: 'hiru', fr: 'midi', en: 'noon' },
+  { hiragana: 'ゆうがた', romaji: 'yuugata', fr: 'soir', en: 'evening' },
+  { hiragana: 'よる', romaji: 'yoru', fr: 'nuit', en: 'night' },
 
   // Maison
   { hiragana: 'いえ', romaji: 'ie', fr: 'maison', en: 'house' },
